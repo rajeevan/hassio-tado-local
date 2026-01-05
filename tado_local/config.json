@@ -1,0 +1,30 @@
+{
+  "name": "Tado Local",
+  "version": "1.0.0",
+  "slug": "tado_local",
+  "description": "Manage TADO devices locally via HomeKit bridge",
+  "url": "https://github.com/rajeevan/TadoLocal",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "startup": "services",
+  "boot": "auto",
+  "ingress": true,
+  "ingress_port": 4407,
+  "ingress_entry": "/",
+  "ports": {},
+  "ports_description": {},
+  "map": [
+    "config:rw"
+  ],
+  "options": {
+    "bridge_ip": "",
+    "pin": ""
+  },
+  "schema": {
+    "bridge_ip": "str",
+    "pin": "str"
+  },
+  "image": "rjeevan/tado_local_{arch}"
+}
