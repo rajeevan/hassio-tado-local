@@ -6,7 +6,7 @@ url: "https://github.com/rajeevan/TadoLocal"
 arch:
   - amd64
   # - aarch64
-# init: false
+init: false
 # startup: services
 panel_icon: "mdi:home-thermometer"
 webui: "http://[HOST]:[PORT:4407]/"
@@ -30,4 +30,4 @@ schema:
   state_db: str
   bridge_ip: str
   pin: str
-# image: "ghcr.io/rajeevan/tado_local_{arch}:latest"
+image: "ghcr.io/rajeevan/tado_local_{arch}:latest"
