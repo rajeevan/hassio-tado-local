@@ -30,4 +30,4 @@ schema:
   state_db: str
   bridge_ip: str
   pin: str
-image: "ghcr.io/rajeevan/tado_local_{arch}:latest"
+image: rajeevan/tado_local_{arch}
