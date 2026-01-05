@@ -1,5 +1,5 @@
 name: "Tado Local"
-version: "0.0.1-alpha.6"
+version: "0.0.1-alpha.7"
 slug: "tado_local"
 description: "Manage TADO devices locally via HomeKit bridge"
 url: "https://github.com/rajeevan/TadoLocal"
@@ -12,7 +12,7 @@ panel_icon: "mdi:home-thermometer"
 webui: "http://[HOST]:[PORT:4407]/"
 boot: "auto"
 ports:
-   - 4407/tcp: 4407/tcp
+   - 4407/tcp: 4407
 ingress: false
 # ingress_port: 4407
 map:
