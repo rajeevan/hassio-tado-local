@@ -5,18 +5,16 @@ description: "Manage TADO devices locally via HomeKit bridge"
 url: "https://github.com/rajeevan/TadoLocal"
 arch:
   - amd64
-  - aarch64
+  # - aarch64
 init: false
 startup: services
+panel_icon: mdi:home-thermometer
 webui: http://[HOST]:[PORT:4407]/
 boot: auto
-# ingress: true
 ports:
    - 4407/tcp: null
 ingress: true
 ingress_port: 4407
-panel_icon: mdi:home-thermometer
-# ports_description: {}
 map:
   - type: share
     read_only: false
