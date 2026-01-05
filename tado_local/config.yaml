@@ -1,5 +1,5 @@
 name: "Tado Local"
-version: "0.0.1-alpha.8"
+version: "0.0.1-alpha.9"
 slug: "tado_local"
 description: "Manage TADO devices locally via HomeKit bridge"
 url: "https://github.com/rajeevan/TadoLocal"
@@ -15,8 +15,8 @@ ports:
   "4407/tcp": 4407
 "ports_description":
   "4407/tcp": "Tado Local WEB GUI and API"
-ingress: true
-ingress_port: 4407
+# ingress: true
+# ingress_port: 4407
 map:
   - type: "homeassistant_config"
     read_only: false
