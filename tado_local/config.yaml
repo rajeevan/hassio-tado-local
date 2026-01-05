@@ -7,28 +7,31 @@ arch:
   - amd64
   - aarch64
 init: false
-
-# startup: services
-# boot: auto
+startup: services
+webui: http://[HOST]:[PORT:4407]/
+boot: auto
 # ingress: true
-# ports:
-#   4407/tcp: null
+ports:
+   - 4407/tcp: null
+ingress: true
+ingress_port: 4407
+panel_icon: mdi:home-thermometer
 # ports_description: {}
-# map:
-#   - type: share
-#     read_only: false
-#   - type: homeassistant_config
-#     read_only: false
-#     path: /config
-#   - type: addon_config
-#     read_only: false
-#     path: /addon_config
-# options:
-#   state: /config/tado_local/tado-local.db
-#   bridge_ip: ""
-#   pin: ""
-# schema:
-#   state: str
-#   bridge_ip: str
-#   pin: str
-# image: ghcr.io/rajeevan/tado_local_{arch}:latest
+map:
+  - type: share
+    read_only: false
+  - type: homeassistant_config
+    read_only: false
+    path: /config
+  - type: addon_config
+    read_only: false
+    path: /addon_config
+options:
+  state_db: /config/tado_local/tado-local.db
+  bridge_ip: ""
+  pin: ""
+schema:
+  state_db: str
+  bridge_ip: str
+  pin: str
+image: ghcr.io/rajeevan/tado_local_{arch}:latest
