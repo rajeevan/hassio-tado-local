@@ -11,10 +11,10 @@ startup: services
 panel_icon: "mdi:home-thermometer"
 webui: "http://[HOST]:[PORT:4407]/"
 boot: "auto"
-# ports:
-#    - 4407/tcp: null
-ingress: true
-ingress_port: 4407
+ports:
+   - 4407/tcp: 4407/tcp
+ingress: false
+# ingress_port: 4407
 map:
   - type: "homeassistant_config"
     read_only: false
