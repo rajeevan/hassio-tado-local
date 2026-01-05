@@ -105,13 +105,13 @@ jobs:
           echo "TAG_NAME=v${VERSION}" >> $GITHUB_OUTPUT
           echo "Version: ${VERSION}"
 
-      - name: Update config.json with version
+      - name: Update config.yaml with version
         run: |
           VERSION="${{ steps.version.outputs.VERSION }}"
-          # Update version in config.json
-          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" tado_local/config.json
+          # Update version in config.yaml
+          sed -i "s/version: \".*\"/version: \"${VERSION}\"/" tado_local/config.yaml
           # Update image reference to use GHCR
-          sed -i "s|\"image\": \".*\"|\"image\": \"ghcr.io/${{ github.repository_owner }}/tado_local_{arch}:${VERSION}\"|" tado_local/config.json
+          sed -i "s|image: \".*\"|image: \"ghcr.io/${{ github.repository_owner }}/tado_local_{arch}:${VERSION}\"|" tado_local/config.yaml
 
       - name: Create add-on package
         run: |
