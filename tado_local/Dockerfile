@@ -35,5 +35,7 @@ RUN \
 COPY run.sh /
 RUN chmod a+x /run.sh
 
+EXPOSE 4407
+
 # Run the startup script
 CMD ["/run.sh"]
