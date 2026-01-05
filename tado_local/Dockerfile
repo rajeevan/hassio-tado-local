@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:latest
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:3.14-alpine3.23
 FROM ${BUILD_FROM}
 
 # Set shell

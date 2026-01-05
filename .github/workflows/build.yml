@@ -21,7 +21,7 @@ jobs:
       matrix:
         arch:
           - amd64
-          - arm64
+          - aarch64
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -59,7 +59,7 @@ jobs:
         id: build_args
         run: |
           ARCH="${{ matrix.arch }}"
-          echo "BUILD_FROM=ghcr.io/home-assistant/${ARCH}-base-python:latest" >> $GITHUB_OUTPUT
+          echo "BUILD_FROM=ghcr.io/home-assistant/${ARCH}-base-python:3.14-alpine3.23" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v5
