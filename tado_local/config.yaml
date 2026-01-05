@@ -8,9 +8,9 @@ arch:
   # - aarch64
 # init: false
 # startup: services
-panel_icon: mdi:home-thermometer
-webui: http://[HOST]:[PORT:4407]/
-boot: auto
+panel_icon: "mdi:home-thermometer"
+webui: "http://[HOST]:[PORT:4407]/"
+boot: "auto"
 # ports:
 #    - 4407/tcp: null
 # ingress: true
@@ -30,4 +30,4 @@ boot: auto
 #   state_db: str
 #   bridge_ip: str
 #   pin: str
-image: ghcr.io/rajeevan/tado_local_{arch}:latest
+# image: ghcr.io/rajeevan/tado_local_{arch}:latest
