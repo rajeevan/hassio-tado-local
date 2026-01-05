@@ -6,7 +6,7 @@
   "url": "https://github.com/rajeevan/TadoLocal",
   "arch": [
     "amd64",
-    "arm64"
+    "aarch64"
   ],
   "startup": "services",
   "boot": "auto",
@@ -26,5 +26,5 @@
     "bridge_ip": "str",
     "pin": "str"
   },
-  "image": "rjeevan/tado_local_{arch}"
+  "image": "rjeevan/tado_local_{arch}:latest"
 }
