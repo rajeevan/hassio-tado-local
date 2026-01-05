@@ -15,19 +15,19 @@ boot: "auto"
 #    - 4407/tcp: null
 # ingress: true
 # ingress_port: 4407
-# map:
-#   - type: homeassistant_config
-#     read_only: false
-#     path: /config
-#   - type: addon_config
-#     read_only: false
-#     path: /addon_config
-# options:
-#   state_db: /config/tado_local/tado-local.db
-#   bridge_ip: "192.168.1.100"
-#   pin: "000-11-222"
-# schema:
-#   state_db: str
-#   bridge_ip: str
-#   pin: str
-# image: ghcr.io/rajeevan/tado_local_{arch}:latest
+map:
+  - type: "homeassistant_config"
+    read_only: false
+    path: "/config"
+  - type: "addon_config"
+    read_only: false
+    path: "/addon_config"
+options:
+  state_db: "/config/tado_local/tado-local.db"
+  bridge_ip: "192.168.1.100"
+  pin: "000-11-222"
+schema:
+  state_db: str
+  bridge_ip: str
+  pin: str
+image: "ghcr.io/rajeevan/tado_local_{arch}:latest"
