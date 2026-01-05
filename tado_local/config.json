@@ -1,6 +1,6 @@
 {
   "name": "Tado Local",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "slug": "tado_local",
   "description": "Manage TADO devices locally via HomeKit bridge",
   "url": "https://github.com/rajeevan/TadoLocal",

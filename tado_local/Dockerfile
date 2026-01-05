@@ -1,20 +1,20 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM ${BUILD_FROM}
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install Python and pip
+# Install Python, pip, and git
 RUN \
     apk add --no-cache \
         python3 \
         py3-pip \
         py3-setuptools \
-    && \
-    python3 -m ensurepip --upgrade
+        git \
+        tzdata
 
 # Install tado_local from GitHub (auto-mode-schedule branch)
-RUN pip3 install --no-cache-dir \
+RUN pip3 install --no-cache-dir --break-system-packages \
     git+https://github.com/rajeevan/TadoLocal.git@auto-mode-schedule
 
 # Copy run script
