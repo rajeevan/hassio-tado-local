@@ -6,6 +6,8 @@
 
 set -e
 
+bashio::log.info "Tado Local starting..."
+
 # Get configuration options
 BRIDGE_IP=$(bashio::config 'bridge_ip')
 PIN=$(bashio::config 'pin')

@@ -93,7 +93,7 @@ To test the add-on locally:
 1. Clone this repository
 2. Build the Docker image:
    ```bash
-   docker build -t tado_local:test -f tado_local/Dockerfile --build-arg BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest tado_local/
+   docker build -t tado_local:test -f tado_local/Dockerfile --build-arg BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:latest tado_local/
    ```
 3. Run the container with proper volume mounts
 
