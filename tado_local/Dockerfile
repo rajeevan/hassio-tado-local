@@ -27,7 +27,7 @@ RUN \
 
 # Install tado_local package from extracted source
 RUN \
-    pip3 install -e --no-cache-dir --break-system-packages \
+    pip3 install --no-cache-dir --break-system-packages \
         /tmp/TadoLocal-auto-mode-schedule && \
     rm -rf /tmp/TadoLocal-auto-mode-schedule
 
