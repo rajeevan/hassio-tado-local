@@ -13,18 +13,35 @@
   "ingress": true,
   "ingress_port": 4407,
   "ingress_entry": "/",
-  "ports": {},
+  "ports": {
+    "4407/tcp": null
+  },
   "ports_description": {},
   "map": [
-    "config:rw"
+    {
+      "type": "share",
+      "read_only": false
+    },
+    {
+      "type": "homeassistant_config",
+      "read_only": false,
+      "path": "/config"
+    },
+    {
+      "type": "addon_config",
+      "read_only": false,
+      "path": "/addon_config"
+    }
   ],
   "options": {
+    "state": "/config/tado_local/tado-local.db",
     "bridge_ip": "",
     "pin": ""
   },
   "schema": {
+    "state": "str",
     "bridge_ip": "str",
     "pin": "str"
   },
-  "image": "rjeevan/tado_local_{arch}:latest"
+  "image": "ghcr.io/rajeevan/tado_local_{arch}:latest"
 }
