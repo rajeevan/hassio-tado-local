@@ -14,7 +14,7 @@ jobs:
         arch: [aarch64, amd64]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
@@ -28,7 +28,7 @@ jobs:
         with:
           args: |
             --${{ matrix.arch }} \
-            --target /data \
-            --tag  ${{ github.event.release.tag_name || 'latest' }} \
+            --target addon-folder \
+            --version  ${{ github.event.release.tag_name || 'latest' }} \
             --image "${{ github.repository_owner }}/hassio-tado-local-{arch}" \
             --docker-hub ghcr.io
