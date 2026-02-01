@@ -33,4 +33,5 @@ schema:
   bridge_ip: str
   pin: str
 # image: rajeevan/tado_local_{arch}
-image: ghcr.io/rajeevan/tado_local_{arch}
+# image: ghcr.io/rajeevan/tado_local_{arch}
+image: ghcr.io/rajeevan/image-{arch}-tado-local

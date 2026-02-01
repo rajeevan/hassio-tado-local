@@ -6,29 +6,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  publish:
+    name: Publish
     runs-on: ubuntu-latest
-    name: Build and Publish
-    strategy:
-      matrix:
-        arch: [aarch64, amd64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
-
-      - name: Login to GitHub Container Registry
+      - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish Add-on
-        uses: home-assistant/builder@2025.11.0
+      - name: Publish
+        uses: home-assistant/builder@[version]
         with:
           args: |
-            --${{ matrix.arch }} \
+            --all \
             --target /data \
             --version  ${{ github.event.release.tag_name || 'latest' }} \
-            --image "${{ github.repository_owner }}/hassio-tado-local-{arch}" \
-            --docker-hub ghcr.io
+            # --image "${{ github.repository_owner }}/image-{arch}-tado-local" \
+            # --docker-hub ghcr.io
+  
