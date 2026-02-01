@@ -47,11 +47,10 @@ jobs:
           args: |
             --${{ matrix.arch }} \
             --target ./tado_local \
-            --image ${{ env.IMAGE_NAME }}_{arch} \
+            --image ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}_{arch} \
             --version ${{ steps.version.outputs.VERSION }} \
             --docker-user ${{ github.repository_owner }} \
-            --docker-password ${{ secrets.GITHUB_TOKEN }} \
-            --ghcr
+            --docker-password ${{ secrets.GITHUB_TOKEN }}
 
       - name: Save Docker image as artifact
         run: |
