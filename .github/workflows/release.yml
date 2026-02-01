@@ -28,7 +28,7 @@ jobs:
         with:
           args: |
             --${{ matrix.arch }} \
-            --target addon-folder \
+            --target /data \
             --version  ${{ github.event.release.tag_name || 'latest' }} \
             --image "${{ github.repository_owner }}/hassio-tado-local-{arch}" \
             --docker-hub ghcr.io
